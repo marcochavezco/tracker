@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "esbuild src/index.ts --bundle --outfile=dist/dcsignal.js --minify --format=iife",
-    "dev": "esbuild src/index.ts --bundle --outfile=dist/dcsignal.js --minify --format=iife --watch",
+    "build": "esbuild src/index.ts --bundle --outfile=dist/tracker.js --minify --format=iife",
+    "dev": "esbuild src/index.ts --bundle --outfile=dist/tracker.js --minify --format=iife --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
