@@ -1,0 +1,20 @@
+{
+  "name": "tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "target": "esnext",
+  "module": "esnext",
+  "scripts": {
+    "build": "esbuild src/vanilla/init-tracker.ts --bundle --outfile=dist/tracker.js --minify --format=iife",
+    "dev": "esbuild src/vanilla/init-tracker.ts --bundle --outfile=dist/tracker.js --minify=false --format=iife --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "esbuild": "^0.25.2",
+    "typescript": "^5.8.3"
+  }
+}

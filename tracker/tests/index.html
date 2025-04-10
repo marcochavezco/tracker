@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dealership</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+      }
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 1rem 0;
+        text-align: center;
+      }
+      header h1 {
+        margin: 0;
+      }
+      nav {
+        text-align: center;
+        margin: 1rem 0;
+      }
+      nav a {
+        text-decoration: none;
+        color: #333;
+        margin: 0 1rem;
+        font-weight: bold;
+      }
+      nav a:hover {
+        color: #007bff;
+      }
+      .container {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: #fff;
+        padding: 2rem;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      }
+      .button {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        text-align: center;
+      }
+      .button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <script src="../dist/tracker.js"></script>
+  <body>
+    <header>
+      <h1>Welcome to Dealership</h1>
+    </header>
+    <nav>
+      <a href="#inventory">Inventory</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact Us</a>
+    </nav>
+    <div class="container">
+      <h2>Your Dealership</h2>
+      <p>Use the buttons below to navigate through the tracker:</p>
+      <a href="#view-inventory" class="button">View Inventory</a>
+      <a href="#add-vehicle" class="button">Add Vehicle</a>
+      <a href="#track-sales" class="button">Track Sales</a>
+    </div>
+  </body>
+</html>
