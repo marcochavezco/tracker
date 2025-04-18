@@ -1,13 +1,13 @@
 import express from 'express';
 import cors from 'cors';
+import eventsRouter from './routes/events';
 
 export const app = express();
-app.use(cors());
+app.use(cors({ credentials: true, origin: true }));
+app.use(express.json());
 app.disable('x-powered-by');
 
-app.get('/', (req, res) => {
-  res.send('Hello World');
-});
+app.use('/events', eventsRouter);
 
 const PORT = process.env.PORT ?? 8080;
 

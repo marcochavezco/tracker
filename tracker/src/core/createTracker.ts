@@ -4,16 +4,37 @@ export function createTracker() {
   const userId = getUserId();
 
   function sendEvent(eventName: string, data: Record<string, any> = {}) {
-    const payload = {
-      event: eventName,
-      userId,
-      url: window.location.href,
-      timestamp: Date.now(),
-      ...data,
-    };
-
-    console.log('[tracker]', payload);
-    // navigator.sendBeacon('/track', JSON.stringify(payload));
+    navigator.sendBeacon(
+      'http://localhost:8080/events',
+      new Blob(
+        [
+          JSON.stringify({
+            userId,
+            type: eventName,
+            payload: {
+              url: window.location.href,
+              timestamp: Date.now(),
+            },
+          }),
+        ],
+        { type: 'application/json' }
+      )
+    );
+    fetch('http://localhost:8080/events', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        userId,
+        type: eventName,
+        payload: {
+          url: window.location.href,
+          timestamp: Date.now(),
+          ...data,
+        },
+      }),
+    });
   }
 
   function track(event: string, data?: Record<string, any>) {
